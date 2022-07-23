@@ -1,0 +1,5 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Rock Paper Scissors</title></head>
+    
+</html>
