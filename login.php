@@ -25,7 +25,7 @@ if (isset($_POST['who']) && isset($_POST['pass'])){
             return;
         }
         else{
-            $failure="Incorrect password!";
+            $fail="Incorrect password!";
         }
     }
 }
@@ -45,8 +45,9 @@ if (isset($_POST['who']) && isset($_POST['pass'])){
         <p style="color:red">
         <?php
         //Displaying error messages if any
-        if ($failure!==false){
-            echo "htmlentities($failure)\n";
+        if ($fail!==false){
+            echo htmlentities($fail);
+            echo "\n";
         }
         ?>
         </p>

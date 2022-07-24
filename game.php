@@ -14,9 +14,10 @@ if (isset($_POST['logout'])){
 //Array containing the options  
 $options=array("Rock", "Paper", "Scissors");
 
+$user=-1;
 //Human's Choice
-if (isset($_POST["human"])){
-    $user=$_POST["human"]+0;
+if (isset($_POST["user"])){
+    $user=$_POST["user"]+0;
 }
 
 //Computer's Choice
@@ -97,6 +98,7 @@ $result=check($computer,$user);
 
         <pre>
             <?php
+            print "\n";
             if ($user==-1){
                 print "Please select a choice to play";
             }
@@ -104,7 +106,7 @@ $result=check($computer,$user);
                 for ($i=0; $i<3 ; $i++){
                     for ($j=0; $j<3 ;$j++){
                         $r=check($i,$j);
-                        print "Human=$options[$i] Computer=$options[$j] Result=$r\n";
+                        print "Human=$options[$j] Computer=$options[$i] Result=$r\n";
                     }
                 }
             }
