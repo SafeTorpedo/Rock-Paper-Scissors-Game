@@ -81,6 +81,38 @@ $result=check($computer,$user);
             echo "</p>\n";
         }
         ?>
+
+        <form method="POST">
+            <select name="user">
+                <option value="-1">Select</option>
+                <option value="0">Rock</option>
+                <option value="1">Paper</option>
+                <option value="2">Scissors</option>
+                <option value="3">Test</option>
+            </select>
+
+            <input type="submit" value="Play">
+            <input type="submit" name="logout" value="Logout">
+        </form>
+
+        <pre>
+            <?php
+            if ($user==-1){
+                print "Please select a choice to play";
+            }
+            else if ($user==3){
+                for ($i=0; $i<3 ; $i++){
+                    for ($j=0; $j<3 ;$j++){
+                        $r=check($i,$j);
+                        print "Human=$options[$i] Computer=$options[$j] Result=$r\n";
+                    }
+                }
+            }
+            else{
+                print "Your Play=$options[$user] Computer Play=$options[$computer] Result=$result\n";
+            }
+            ?>
+        </pre>
     </body>
 </html>
 
