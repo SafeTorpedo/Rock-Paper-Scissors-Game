@@ -1,0 +1,27 @@
+<?php
+
+if (isset($_POST['cancel'])){
+    //Redirect to homepage index.php
+    header("Location: index.php");
+    return;
+}
+
+$salt='XyZzy12*_';
+$stored_hash = '1a52e17fa899cf40fb04cfc42e6352f1';  //Password is php123
+
+$fail=false; //For error messages if any arise ahead
+
+
+//Checking for POST data
+if (isset($_POST['who']) && isset($_POST['pass'])){
+    if (strlen($_POST['who'])<1 || strlen($_POST['pass'])<1){
+        $fail="User name and password is required!";
+    }
+    else{
+        $check=hash('md5',$salt.$_POST['pass']);
+        if ($check==$stored_hash){
+            //Redirect to game on successful authentication
+        }
+    }
+}
+
