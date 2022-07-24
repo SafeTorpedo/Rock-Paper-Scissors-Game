@@ -35,5 +35,33 @@ if (isset($_POST['who']) && isset($_POST['pass'])){
 <!-- Starting View Control -->
 
 <!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Please Log In</h1>
+        
+        <p style="color:red">
+        <?php
+        //Displaying error messages if any
+        if ($failure!==false){
+            echo "htmlentities($failure)\n";
+        }
+        ?>
+        </p>
 
+        <!-- Form with POST method -->
+        <form method="POST">
+            <label for="name">User name</label>
+            <input type="text" name="who" id="name"><br/>
+            
+            <label for="pwd">Password</label>
+            <input type="password" name="pass" id="pwd"><br/>
+
+            <input type="submit" value="Log In">
+            <input type="submit" name="cancel" value="Cancel">
+        </form>
+    </body>
+</html>
 
