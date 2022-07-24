@@ -21,7 +21,19 @@ if (isset($_POST['who']) && isset($_POST['pass'])){
         $check=hash('md5',$salt.$_POST['pass']);
         if ($check==$stored_hash){
             //Redirect to game on successful authentication
+            header("Location: game.php?name=".urlencode($_POST['who']));
+            return;
+        }
+        else{
+            $failure="Incorrect password!";
         }
     }
 }
+
+?>
+
+<!-- Starting View Control -->
+
+<!DOCTYPE html>
+
 
