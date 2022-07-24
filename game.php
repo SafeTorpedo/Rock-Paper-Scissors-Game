@@ -67,3 +67,20 @@ $result=check($computer,$user);
 
 ?>
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors Game</title>
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        <?php
+        if (isset($_REQUEST['name'])){
+            echo "<p>Welcome: ";
+            echo htmlentities($_REQUEST['name']);
+            echo "</p>\n";
+        }
+        ?>
+    </body>
+</html>
+
